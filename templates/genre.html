@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ genre }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-xl">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                    <span class="fs-4">Genre</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="/genres/Romance" class="nav-link link-dark">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                            Romance
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/genres/Drama" class="nav-link link-dark">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                            Drama
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/genres/Comedy" class="nav-link link-dark">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                            Comedy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/genres/Detective" class="nav-link link-dark">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                            Detective
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/genres/Recommended" class="nav-link link-dark">
+                            <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                            You should see
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="content">
+                <div class="img-container">
+                    <h2>{{ genre }}</h2>
+                    <div class="img-container">
+                        <img src="{{ url_for('static', filename=image_file) }}" class="img-fluid" alt="{{ genre }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
